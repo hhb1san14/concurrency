@@ -26,6 +26,7 @@ public class AtomicExmaple6 {
 
     private static AtomicBoolean isHappen = new AtomicBoolean(false);
 
+
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
         final Semaphore semaphore = new Semaphore(threadTotal);
