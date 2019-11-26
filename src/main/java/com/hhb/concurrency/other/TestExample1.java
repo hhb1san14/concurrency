@@ -2,7 +2,9 @@ package com.hhb.concurrency.other;
 
 
 import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Semaphore;
 
 /**
  * @author: huanghongbo
@@ -125,25 +127,29 @@ public class TestExample1 {
         // 源码分析
 //        ReentrantLock lock = new ReentrantLock();
 
+        synchronized (new TestExample1()){
+
+        }
+
 
         // 源码分析
-//        try {
-//            CountDownLatch countDownLatch = new CountDownLatch(100);
-//            countDownLatch.countDown();
-//            countDownLatch.await();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            CountDownLatch countDownLatch = new CountDownLatch(100);
+            countDownLatch.countDown();
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
 //         源码分析
-//        try {
-//            Semaphore semaphore = new Semaphore(10);
-//            semaphore.acquire();
-//            semaphore.release();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Semaphore semaphore = new Semaphore(10);
+            semaphore.acquire();
+            semaphore.release();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
         try {
